@@ -1,5 +1,5 @@
 class invalidParameter extends Error {
-    constructor(parameter: any) {
+    constructor(parameter: unknown) {
         super(`Invalid parameter: ${parameter}.`);
     }
 }

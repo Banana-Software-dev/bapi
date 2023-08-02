@@ -47,6 +47,4 @@ class Options {
     }
 }
 
-module.exports = {
-    Main_API : BAPI_main
-};
+export { BAPI_main, Options };

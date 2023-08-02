@@ -6,6 +6,6 @@
  * NPM - https://github.com/package/bapi
  */
 
-const BAPI = require("./lib/BAPI");
+import * as BAPI from './lib/BAPI';
 
-module.exports = BAPI;
+export default BAPI;
