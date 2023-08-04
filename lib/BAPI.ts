@@ -10,6 +10,7 @@
 
 import axios, { AxiosInstance } from 'axios';
 import { invalidParameter } from "./exceptions";
+import { BAPI_AuthorisationFlow, BAPI_NewAuthorisationFlow_Options, BAPI_ExistingAuthrosationFlow_Options, BAPI_AuthrisationFlowScopes } from "./Authorisation";
 
 class BAPI_main {
     private instance:AxiosInstance|AxiosInstance;
@@ -45,10 +46,22 @@ class BAPI_main {
 
         });
     }
+
+    newAuthenticationFlow(options: BAPI_NewAuthorisationFlow_Options) {
+        new BAPI_AuthorisationFlow(options);
+    }
+
+    getAuthenticationFlow(options: BAPI_ExistingAuthrosationFlow_Options) {
+        new BAPI_AuthorisationFlow(options);
+    }
 }
 
 type BAPI_Options = {
     timeout: number
 }
 
-export { BAPI_main, BAPI_Options };
+type BAPI_Authorisation_Options = {
+    redirect_url: string
+}
+
+export { BAPI_main, BAPI_Options, BAPI_Authorisation_Options, BAPI_AuthorisationFlow, BAPI_AuthrisationFlowScopes };
